@@ -1,0 +1,141 @@
+:root {
+  color-scheme: dark;
+  --bg: #0a0f1f;
+  --panel: rgba(16, 24, 40, 0.84);
+  --panel-border: rgba(130, 160, 255, 0.35);
+  --text: #ecf2ff;
+  --muted: #9db2d9;
+  --accent: #78b8ff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#gameCanvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  inset: 12px 12px auto auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+#score,
+#leaderboard {
+  background: rgba(11, 18, 34, 0.62);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(140, 190, 255, 0.22);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+#score {
+  text-align: right;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#leaderboard h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+#leaderboardList {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  min-width: 180px;
+}
+
+#leaderboardList li {
+  padding: 2px 0;
+  color: var(--muted);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 8, 20, 0.62);
+  z-index: 50;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay.visible {
+  display: grid;
+}
+
+.panel {
+  width: min(420px, 88vw);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.45);
+}
+
+.panel h1,
+.panel h2 {
+  margin: 0 0 10px;
+}
+
+.panel p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+#nameInput {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(140, 190, 255, 0.35);
+  background: rgba(7, 14, 28, 0.8);
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #4f8cf5, #7b6fff);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  filter: brightness(1.07);
+}
+
+.help {
+  font-size: 12px;
+  color: var(--muted);
+}

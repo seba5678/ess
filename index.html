@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Cells</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="hud">
+    <div id="score">Mass: 0</div>
+    <div id="leaderboard">
+      <h3>Leaderboard</h3>
+      <ol id="leaderboardList"></ol>
+    </div>
+  </div>
+
+  <div id="startScreen" class="overlay visible">
+    <div class="panel">
+      <h1>Nebula Cells</h1>
+      <p>Eat pellets, outgrow rivals, and avoid spiky hazards.</p>
+      <input id="nameInput" type="text" maxlength="16" placeholder="Enter your name" value="Player" />
+      <button id="playBtn">Play</button>
+      <p class="help">Move: Mouse · Split: Space · Eject: W · Pause: Esc</p>
+    </div>
+  </div>
+
+  <div id="pauseScreen" class="overlay hidden">
+    <div class="panel">
+      <h2>Paused</h2>
+      <button id="resumeBtn">Resume</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
